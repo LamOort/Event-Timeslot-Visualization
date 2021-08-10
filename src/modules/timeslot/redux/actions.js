@@ -11,12 +11,12 @@ const fetchTimeSlots = () => ({
 
 const fetchTimeSlotsSuccess = (data) => ({
   type: FETCH_TIMESLOTS_SUCCESS,
-  data,
+  payload: data,
 });
 
 const setFetchTimeSlotsError = (err) => ({
   type: FETCH_TIMESLOTS_ERROR,
-  err,
+  payload: err,
 });
 
 export { fetchTimeSlots, fetchTimeSlotsSuccess, setFetchTimeSlotsError };

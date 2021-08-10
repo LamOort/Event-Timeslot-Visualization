@@ -8,7 +8,7 @@ import { css } from '@emotion/css';
 const Header = () => {
   return (
     <Layout.Header
-      className={css`
+      className={ css`
         position: fixed;
         display: flex;
 
@@ -20,9 +20,10 @@ const Header = () => {
 
         z-index: 100;
       `}
+      data-test="header-comp"
     >
       <div
-        className={css`
+        className={ css`
           height: 100%;
           display: flex;
 
@@ -42,7 +43,7 @@ const Header = () => {
         `}
       >
         <div
-          className={css`
+          className={ css`
             position: relative;
             width: 38px;
             height: 38px;
@@ -63,7 +64,7 @@ const Header = () => {
           `}
         ></div>
       </div>
-    </Layout.Header>
+    </Layout.Header >
   );
 };
 

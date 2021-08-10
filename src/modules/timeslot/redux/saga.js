@@ -1,30 +1,27 @@
-import axios from 'axios';
-import { takeLatest, put } from 'redux-saga/effects';
+import { takeLatest, put, call } from 'redux-saga/effects';
+import { api } from '../../../config/axios/api';
 
 import {
   FETCH_TIMESLOTS,
-  FETCH_TIMESLOTS_SUCCESS,
-  FETCH_TIMESLOTS_ERROR,
 } from './types';
 
-import { build_header } from '../../../utils/build_header';
+import {
+  fetchTimeSlotsSuccess, setFetchTimeSlotsError
+} from './actions';
 
-function* fetchTimeSlotsSaga() {
-  const config = {
-    headers: build_header(),
-  };
+
+
+export function* fetchTimeSlotsSaga() {
+
   try {
-    const response = yield axios.get(
-      '/aalto/events/unicorndemo2025/time_slots',
-      config,
-    );
+    const response = yield call(api.requestTimeSlots);
 
-    yield put({
-      type: FETCH_TIMESLOTS_SUCCESS,
-      payload: response.data.data,
-    });
+    yield put(fetchTimeSlotsSuccess(response.data.data));
+
+    return response.status;
   } catch (error) {
-    yield put({ type: FETCH_TIMESLOTS_ERROR, payload: error });
+    yield put(setFetchTimeSlotsError(error));
+    return -1;
   }
 }
 

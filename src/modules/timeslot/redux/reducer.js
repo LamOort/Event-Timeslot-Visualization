@@ -5,7 +5,7 @@ import {
   FETCH_TIMESLOTS_ERROR,
 } from './types';
 
-const initialState = {
+export const initialState = {
   timeSlotsData: [],
   fetchError: null,
   loading: false,

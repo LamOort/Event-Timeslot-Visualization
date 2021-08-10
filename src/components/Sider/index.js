@@ -11,7 +11,7 @@ const Sider = () => {
     <Layout.Sider
       theme="light"
       breakpoint="lg"
-      className={css`
+      className={ css`
         position: fixed;
         padding: 0;
 
@@ -35,11 +35,13 @@ const Sider = () => {
           justify-content: flex-start;
         }
       `}
+
+      data-test="sider-comp"
     >
       <Menu
         mode="inline"
-        defaultSelectedKeys={['event-home']}
-        className={css`
+        defaultSelectedKeys={ ['event-home'] }
+        className={ css`
           height: 100%;
 
           padding: 100px 0;
@@ -49,7 +51,7 @@ const Sider = () => {
         <Menu.Item key="event-home">
           <MenuIcon className="fal fa-home" />
           <span
-            className={css`
+            className={ css`
               @media only screen and (max-width: 991px) {
                 display: none !important;
               }
@@ -62,7 +64,7 @@ const Sider = () => {
         <Menu.Item key="people">
           <MenuIcon className="fal fa-users" />
           <span
-            className={css`
+            className={ css`
               @media only screen and (max-width: 991px) {
                 display: none !important;
               }
@@ -75,7 +77,7 @@ const Sider = () => {
         <Menu.Item key="schedule">
           <MenuIcon className="fal fa-calendar-check" />
           <span
-            className={css`
+            className={ css`
               @media only screen and (max-width: 991px) {
                 display: none !important;
               }
@@ -88,7 +90,7 @@ const Sider = () => {
         <Menu.Item key="stream">
           <MenuIcon className="fal fa-tv-retro" />
           <span
-            className={css`
+            className={ css`
               @media only screen and (max-width: 991px) {
                 display: none !important;
               }
@@ -101,7 +103,7 @@ const Sider = () => {
         <Menu.Item key="breakout-rooms">
           <MenuIcon className="fal fa-coffee-togo" />
           <span
-            className={css`
+            className={ css`
               @media only screen and (max-width: 991px) {
                 display: none !important;
               }
@@ -114,7 +116,7 @@ const Sider = () => {
         <Menu.Item key="speakers">
           <MenuIcon className="fal fa-keynote" />
           <span
-            className={css`
+            className={ css`
               @media only screen and (max-width: 991px) {
                 display: none !important;
               }
@@ -127,7 +129,7 @@ const Sider = () => {
         <Menu.Item key="sponsors">
           <MenuIcon className="fal fa-handshake" />
           <span
-            className={css`
+            className={ css`
               @media only screen and (max-width: 991px) {
                 display: none !important;
               }
